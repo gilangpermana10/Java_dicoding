@@ -5,15 +5,14 @@ import java.io.FileReader;
 
 public class Main {
     public static void main(String[] args) {
+        int[] a = new int[5];
         try {
-            //Mencoba membaca berkas latiihan.txt
-            File file = new File("coba.txt");
-            FileReader fr = new FileReader(file);
-            //Jika berhasil maka tampilkan pesan
-            System.out.println("Read File Berhasil");
-        }catch (Exception e){
-            //jika terjadi kesalahan maka tampilkan pesan
-            System.out.println(e.getMessage());
+            System.out.println("Akses elemen ke 5 : " + a[5]);
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Exception Trhow : " + e);
+        }finally {
+            a[4] = 10;
+            System.out.println("Nilai Elemen Terakhir: " + a[4]);
         }
     }
 
